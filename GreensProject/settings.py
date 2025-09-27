@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-myhbvhakam$-$xix=j%s5t=m77grkuk__z6j7$(kl3_#%egt-c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["rajrock.pythonanywhere.com", "www.rajrock.pythonanywhere.com", "*"]
 
 
 # Application definition
