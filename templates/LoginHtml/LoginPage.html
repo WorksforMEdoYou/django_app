@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in Form</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'LoginPage/Login.css'%}">
+</head>
+
+<body style="background-color: #e0c1a1;">
+    <div class="container">
+        <div class="form-container">
+            <div class="text-center">
+                <h1 class="title">Sign in</h1>
+                <p class="subtitle">Sign in below to access your account</p>
+            </div>
+            <div class="form-content">
+                <form method="POST">
+                    {%csrf_token%}
+                    <div class="input-group">
+                        <input type="email" name="email" id="email" placeholder="Email Address" class="input-field" autocomplete="NA" />
+                        <label for="email" class="input-label">Email Address</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password" id="password" placeholder="Password" class="input-field" />
+                        <label for="password" class="input-label">Password</label>
+                    </div>
+                    <div class="submit-btn-container">
+                        <button type="submit" class="submit-btn">Sign in</button>
+                    </div>
+                    <p class="text-center signup-link">Don't have an account yet?
+                        <a href="{%url 'Signup'%}" class="signup">Sign up</a>.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

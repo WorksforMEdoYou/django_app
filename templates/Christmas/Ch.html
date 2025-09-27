@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greens Project</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'Christmas/Christmaspage.css'%}">
+</head>
+<body>
+    <div class="container">
+        <h1>TASK IS CHRISTMAS TODAY</h1>
+        {%if today == "25-12"%}
+            <div class="christmas">
+                <h1>Happy Christmas <br>merry christmas</h1>
+            </div>
+        {%else%}
+            <div class="notchristmas">
+                <h1>Not today, lets wait.</h1>
+            </div>
+        {%endif%}
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'Base/base.css'%}">
+</head>
+<body>
+    <section class="navigation">
+        <div class="logo">
+            <a class="link" href="{%url 'Homepage'%}">
+                <img src="{%static 'Base/beach_icon.png'%}" alt="" height="30px" width="30px">
+            </a>
+            <li class="link">{{request.Usersignup.Firstname}}</li>
+        </div>
+        <div class="content">
+            <ul class="navlinks">
+                <li><a class="link" href="/">Home</a></li>
+                <li><a class="link" href="Christmas/">Christmas</a></li>
+                <li><a class="link" href="{%url 'DataTable'%}">Table</a></li>
+                <li><a class="link" href="{%url 'getproducts'%}">API</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a class="link" href="{%url 'Logout'%}">Logout</a></li>
+                {%else%}
+                    <li><a class="link" href="{%url 'Signin'%}">Login</a></li>
+                {%endif%}
+            </ul>
+        </div>
+    </section>
+    {%block content%}
+    {%endblock%}
+    <Section class="Footercontent">
+        <div class="footerContent">
+            <ul class="Footerlinks">
+                <li><a class="link" href="/">Home</a></li>
+                <li><a class="link" href="Christmas/">Christmas</a></li>
+                <li><a class="link" href="{%url 'DataTable'%}">Table</a></li>
+                <li><a class="link" href="{%url 'getproducts'%}">API</a></li>
+            </ul>
+        </div>
+    </Section>
+</body>
+</html>

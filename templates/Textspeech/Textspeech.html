@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to speech</title>
+    {%extends 'Base/base.html'%}
+    {%load static%}
+</head>
+<body>
+    {%block content%}
+    <script src="{%static 'Tailwindcss/tailwind.js'%}"></script>
+        <div class="flex pt-4 pb-4 flex-col gap-1 bg-[#f8efe3]">
+            <h1 class="text-5xl font-bold text-center">Speech to Text</h1>
+            <p class="text-center text-md">Enter the text then it will speak.</p>
+        </div>
+        <div class="bg-[#f8efe3] max-w-[100%] w-full flex justify-center items-center">
+            <div class="max-w-[80%] w-full p-3 bg-slate-100">
+                <form action="" method="POST" class="flex flex-col gap-2">
+                    {%csrf_token%}
+                    <textarea name="content" id="" rows="10" cols="50" required></textarea>
+                    <a href="{%url 'product1'%}">
+                        <button class="p-3 bg-black font-bold text-white text-md rounded-2xl">Speak Now</button>
+                    </a>
+                </form>
+            </div>
+        </div>
+    {%endblock%}
+</body>
+</html>

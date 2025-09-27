@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%extends 'Base/base.html'%}
+    {%load static%}
+</head>
+<body>
+    {%block content%}
+    <script src="{%static 'Tailwindcss/tailwind.js'%}"></script>
+        <div class="containertable">
+            <h1 class="text-center font-bold text-3xl">Welcome to Users Table</h1>
+            <p class="text-orange-600">We can see the customers who are using our website.</p>
+            <div class="tablecontainer">
+                <table class="table-fixed">
+                    <thead>
+                      <tr>
+                        <th>SINO</th>
+                        <th>NAME</th>
+                        <th>EMAIL</th>
+                        <th>AGE</th>
+                        <th>GENDER</th>
+                        <th>PASSWORD</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {%for user in venus%}
+                            <tr class="hover:-translate-y-1 hover:bg-[#FFB300FF]">
+                                <th>{{user.id}}</th>
+                                <th>{{user.Firstname}}</th>
+                                <th>{{user.email}}</th>
+                                <th>{{user.age}}</th>
+                                <th>{{user.gender}}</th>
+                                <th>{{user.password}}</th>
+                            </tr>
+                        {%endfor%}
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <div class="flex flex-row gap-2 max-w-[100%] justify-between">
+            <div class="text-green-500 font-bold">
+                {{venus}}
+            </div>
+            <!-- <div>
+                Has previous: {{venus.has_previous}}
+                current page: {{venus.number}}
+                Has next page: {{venus.has_next}}
+                num of pages: {{venus.pagnator.num_pages}}
+            </div> -->
+            <div class="gap-3 m-2">
+                {%if venus.has_previous and venus.has_next%}
+                    <a href="?page={{venus.previous_page_number}}"><button class="p-3 rounded-xl font-bold bg-sky-600 hover:bg-sky-300">Prev</button></a>
+                    <a href="?page={{venus.next_page_number}}"><button class="p-3 rounded-xl font-bold bg-green-600 hover:bg-green-300">Next</button></a>
+                {%elif venus.has_next%}
+                    <a href="?page={{venus.next_page_number}}"><button class="p-3 rounded-xl font-bold bg-green-600 hover:bg-green-300">Next</button></a>
+                {%elif venus.has_previous%}
+                    <a href="?page={{venus.previous_page_number}}"><button class="p-3 rounded-xl font-bold bg-sky-600 hover:bg-sky-300">Prev</button></a>
+                {%endif%}
+            </div>
+        </div>
+        <style>
+            .containertable{
+                width: 100%;
+                max-width: 100%;
+                background-color: #ffd166;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding-top: 30px;
+            }
+            
+            *{
+                font-family: 'Poppins';
+            }
+            
+            .tablecontainer{
+                width: 100%;
+                max-width: 100%;
+                margin-top: 50px;
+                margin-bottom: 10px;
+                padding: 5px;
+                border-radius: 5px;
+                background: #e0e0e0;
+                box-shadow: inset 20px 20px 60px #bebebe,
+                        inset -20px -20px 60px #ffffff;
+            }
+            table{
+                width: 100%;
+            }       
+        </style>
+    {%endblock%}
+</body>
+</html>

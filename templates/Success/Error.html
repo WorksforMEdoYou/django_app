@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{%static '/SuccessPage/err.css'%}">
+</head>
+<body>
+    <div class="view">
+        <div class="container">
+            <div class="imagecontainer">
+                <img src="{%static 'SuccessPage/error.png'%}" alt="Success" height="70px" width="70px">
+            </div>
+            <div class="ContentContainer">
+                <div class="Textvalue">
+                    {%for message in Message%}
+                            <h1>Sorry, {{message}}</h1>
+                    {%endfor%}
+                    <p>{{Error}}</p>
+                </div>
+                <a href="/" class="ButtonLink">
+                    <button>Continue <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#5f6368"><path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z"/></svg></button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

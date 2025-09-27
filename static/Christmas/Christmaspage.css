@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: chartreuse;
+    display: flex;
+    flex-direction: column;
+    place-items: center, center;
+}
+.christmas{
+    background-color: rgb(197, 52, 52);
+}
+.christmas>h1{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+.notchristmas{
+    background-color: blueviolet;
+}
+.notchristmas>h1{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
